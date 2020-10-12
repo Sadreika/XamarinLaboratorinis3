@@ -106,6 +106,19 @@
             android:minWidth="25px"
             android:minHeight="25px"
             android:id="@+id/registracija"/>
-
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/switchas"
+          />
     </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:text="Saugoti"
+            android:id="@+id/saugojimas"/>
+    </TableRow>
+
+
 </TableLayout>
