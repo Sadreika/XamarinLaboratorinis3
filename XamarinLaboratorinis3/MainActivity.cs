@@ -29,6 +29,9 @@ namespace XamarinLaboratorinis3
             ArrayAdapter spinnerOptionsAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, spinnerOptions);
             spinner.Adapter = spinnerOptionsAdapter;
 
+            RatingBar ratingBar = FindViewById<RatingBar>(Resource.Id.vertinimas);
+            ratingBar.NumStars = 5;
+
             TimePicker timePicker = FindViewById<TimePicker>(Resource.Id.laikasInput);
             timePicker.SetIs24HourView(Java.Lang.Boolean.False);
           
