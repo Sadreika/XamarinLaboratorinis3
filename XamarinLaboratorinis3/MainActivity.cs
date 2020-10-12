@@ -5,6 +5,7 @@ using Android.Runtime;
 using Android.Widget;
 using Java.Lang;
 using Java.Util;
+using System.Collections.Generic;
 
 namespace XamarinLaboratorinis3
 {
@@ -34,12 +35,28 @@ namespace XamarinLaboratorinis3
 
             TimePicker timePicker = FindViewById<TimePicker>(Resource.Id.laikasInput);
             timePicker.SetIs24HourView(Java.Lang.Boolean.False);
-          
+
+            
+
         }
 
         private void Button_Click(object sender, System.EventArgs e)
         {
-            Toast.MakeText(this, "Sup", ToastLength.Short).Show();
+            EditText editText = FindViewById<EditText>(Resource.Id.pavadinimasInput);
+            AutoCompleteTextView autoCompleteTextView = FindViewById<AutoCompleteTextView>(Resource.Id.fakultetasInput);
+            RatingBar ratingBar = FindViewById<RatingBar>(Resource.Id.vertinimas);
+            Spinner spinner = FindViewById<Spinner>(Resource.Id.dienosInput);
+            TimePicker timePicker = FindViewById<TimePicker>(Resource.Id.laikasInput);
+            Switch switchas = FindViewById<Switch>(Resource.Id.switchas);
+           
+            string allInfo = editText.Text + " " +
+                autoCompleteTextView.Text + " " +
+                ratingBar.Rating + " " +
+                spinner.SelectedItem + " " +
+                timePicker.CurrentHour + ":" + timePicker.CurrentMinute + " " +
+                switchas.Checked;
+                
+            Toast.MakeText(this, allInfo, ToastLength.Short).Show();
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
